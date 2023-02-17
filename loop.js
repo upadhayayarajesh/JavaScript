@@ -121,20 +121,69 @@ of the code or multi line comment.
 /* local binding are variable that are defined inside the function and global binding are binding that are defined
  inside the class and are accessible inside  that class.*/
 
+// let x =10;
+// if(true) {
+//     let y=20;
+//     var z=30;
+//     console.log(x +y+z);
+// }
+// console.log(x+z);
 
+/*const halve= function(n){
+    return n/2;
+};
+let n=10;
+console.log(halve(100));
+console.log(n);
+*/
 
+/*
+const hummus=function(factor){
+    const ingredient=function(amount,unit,name){
+        let ingredientAmount= amount * factor;
+        if(ingredientAmount >1){
+            unit +="s";
+        }
+        console.log(`${ingredientAmount} ${unit} ${name}`);
+    };
+    ingredient(1,"can" , "chickPeas");
+    ingredient(0.25,"cup","tahini");
+    ingredient(0.25,"cup","lemon juice");
+    ingredient(1,"clove", "garlic");
+    ingredient(2,"tablespoon","olive oil");
+    ingredient(0.5,"teaspoon","cumin");
+};
 
+hummus(10);
+*/
 
+/*
+function square(x){
+    return x* x;
+}
+*/
+/* this is a function declaration. the statement defines the binding square and points it at the given function.
+It is slightly easier to write and doesn't require a semicolon after the function.
+ */
+// console.log("The future says: ", future());
+// function future(){
+//     return "You'll never have flying cars.";
+// }
+/* Arrow function */
+const power =(base, exponent)=>{
+    let result=1;
+    for(let count=0; count <exponent; count++){
+        result *=base;
+    }
+    return result;
+} ;
+const func= function (){console.log("Hello World");};
+function  func2(){console.log("Hello World.")}
+const func3=(x,y) =>{return x+y;}
 
-
-
-
-
-
-
-
-
-
+const square1=(x) =>{return x*x; };
+const square2=x=>x *x;
+const horn =() => {console.log("Toot");};
 
 
 
