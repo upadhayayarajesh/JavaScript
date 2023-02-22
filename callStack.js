@@ -128,4 +128,96 @@ value of that expression will replace the argument when it is not given */
 // let listOfNumbers =[2,3,5,7,11];
 // console.log(listOfNumbers[2]);
 // console.log(listOfNumbers[0]);
-// console.log(listOfNumbers[2-1]);
+// console.log(listOfNumbers[2-1 ]);
+
+/*{
+    x = Math.PI;
+    cx = Math.cos(x);
+    console.log("cos(n) = " + cx);
+}
+for(let i=0; i<a.length;a[i++]=0);
+a =[1,2,3,4,5]*/
+
+//iterating over the properties in the object.
+
+// let o = {x:1, y:2, z:3};
+/*
+let key="";
+for(let k of Object.keys(o)){
+    key+= k+ " ";
+}
+console.log(key);*!/
+*/
+
+//if you are interesting in object both key  and the value .
+
+/*let pairs ="";
+for(let[K,V] of Object.entries(o)){
+    pairs += K + V;
+}
+console.log(pairs)*/
+
+/*
+let frequency={m:1,i:4,s:4,p:2};
+for(let letter of "missisosippi"){
+    if(frequency[letter]){
+        frequency[letter]++;
+    } else{
+        frequency[letter]=1;
+    }
+}
+console.log(frequency)*/
+ /*let text ="Na na na Na na Batman!";
+ let wordSet= new Set(text.split(" "));
+ let unique=[];
+ for(let word of wordSet){
+     unique.push(word);
+ }
+console.log(unique);
+
+ let m= new Map([[1,"one"]]);
+ for(let [key,value] of m){
+     console.log(key);
+     console.log(value);
+ }
+ async function printSteam(steam){
+     for awaitt (let chunk of steam){
+         console.log(chunk);
+     }
+ }
+ */
+/*for( let p in o){
+    console.log(o[p])
+}*/
+
+/*
+let o = {x:1, y:2, z:3};
+
+let a=[], i=0;
+for(a[i++] in o);
+console.log(a)
+*/
+
+/*function factorial(x){
+    if(x<0) throw new Error("X must nto be negative.");
+    let f ;
+    for(f=1; x>1;f*=x,x--);/!*empty loop body*!/
+    return f;
+}
+console.log(factorial(4));
+try{
+    let n =Number(prompt("please enter a positive  inteer", " "));
+    let f= factorial(n);
+    alert(n+" ! = "+ f);
+}catch (e) {
+    alert(e);
+}*/
+
+/*with(document.forms[0]){
+    name.value="";
+    address.value="";
+    email.value="";
+}*/
+
+
+
