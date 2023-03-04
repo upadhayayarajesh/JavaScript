@@ -1,0 +1,22 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Learning about the Javascript",
+  "main": "abs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upadhayayarajesh/JavaScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/upadhayayarajesh/JavaScript/issues"
+  },
+  "homepage": "https://github.com/upadhayayarajesh/JavaScript#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
