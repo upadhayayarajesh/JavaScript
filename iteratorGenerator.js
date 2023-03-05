@@ -188,9 +188,8 @@ console.log(sum);
 
 const seq=function* (from,to){for (let i=from;i<to;i++)yield i;}
 console.log([...seq(3,5)]);
-*/
 
-/*let o=
+let o={
     x:1,y:2,z:3,
 //     A generator that yields each of the keys of this object.
     *g(){
@@ -199,7 +198,7 @@ console.log([...seq(3,5)]);
         }
     }
 };
-console.log([...o.g()]);*/
+console.log([...o.g()]);
 
 function* fibonacciSquence(){
     let x=0, y=1;
@@ -228,6 +227,94 @@ function* take(n,iterable){
         else yield next.value; // otherwise, yield the value.
     }
 }
+// An array of the first 5 fibonacci numbers
+console.log([...take(5,fibonacciSquence())])
+*/
+
+// Given an array of iterables,yield their elements in interleaved order.
+/*
+function* zip(...iterables){
+    //Get an iterator for each iterable
+    let iterators=iterables.map(i =>i[Symbol.iterator]());
+    let index=0;
+    while (iterables.length>0){ // while there are still some iterators.
+        if(index >=iterables.length){ //if we reached the last iterator
+            index=0;                  // go back ot the first one.
+        }
+        let item= iterators[index].next(); //Get next item from next iterator.
+        console.log(item)
+        if(item.done){   //If that iterator is done.
+            iterators.splice(index,1); // then remove it from the array.
+        }else{
+            yield item.value;
+            index++;
+        }
+    }
+}
+
+console.log([...zip(OneDigitPrimes(),"ab",[0])]);
+*/
+/*function* OneDigitPrimes(){ // Invoking this function does not run the code.
+    yield 2;                // but just returns a generator object. Calling
+    yield 3;                // the next() method of that generator runs.
+    yield 5;                // the code until a yield statement provides.
+    yield 7;                // the return value for the next() method.
+}
+function* sequence(...iterables){
+    for(let iterable of iterables){
+        for(let item of iterable){
+            yield item;
+        }
+    }
+}
+
+console.log(...sequence("abc",OneDigitPrimes()))*/
+
+/*
+function *oneAndDone(){
+    yield 1;
+    return "done";
+}
+
+//The return value does not appear in normal iteration.
+console.log([...oneAndDone()]);
+
+// But it is available if you explicitly call next()
+let generator=oneAndDone();
+console.log(generator.next());
+console.log(generator.next());
+*/
+
+function* smallNumbers(){
+    console.log("next() invoked the first time; argument discarded");
+    let y1=yield 1; // y1==b;
+    console.log("next() invoked a second time with argument", y1);
+    let y2= yield 2;
+    console.log("next() invoked third time with argument", y2);
+    let y3=yield 3;
+    console.log("next() invoked fourth time with argument", y3);
+    return 4;
+}
+let g=smallNumbers();
+console.log("generator created; no code runs yet");
+let n1= g.next("a"); //n1.value==1
+console.log("generator yielded", n1.value);
+let n2=g.next("b");
+console.log("generator yielded", n2.value);
+let n3=g.next("c")
+console.log("generator yielded", n3.value);
+let n4=g.next("d");
+console.log("generator yielded", n4.value);
+
+
+
+
+
+
+
+
+
+
 
 
 
